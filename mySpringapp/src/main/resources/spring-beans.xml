@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="emp" class="com.prowings.springapp.Employee" > <property 
+		name="id" value="10" /> <property name="name" value="Ram" /> <property name="address" 
+		value="Pune" /> </bean> -->
+	<bean id="emp" class="com.prowings.springapp.Employee"
+		lazy-init="true">
+		<constructor-arg index="0" type="int" value="10" />
+		<constructor-arg index="1" type="java.lang.String"
+			value="Ram" />
+		<constructor-arg index="2" type="java.lang.String"
+			value="Pune" />
+
+	</bean>
+
+	<bean id="addr1" class="com.prowings.springapp.Address">
+		<property name="pin" value="123" />
+		<property name="city" value="pune" />
+		<property name="country" value="India" />
+
+	</bean>
+	<bean id="addr2" class="com.prowings.springapp.Address">
+		<property name="pin" value="234" />
+		<property name="city" value="Nashik" />
+		<property name="country" value="India" />
+
+	</bean>
+
+	<bean id="std" class="com.prowings.springapp.Student">
+		<property name="id" value="21" />
+		<property name="name" value="Shubham" />
+		<property name="addresses">
+			<list>
+				<ref bean="addr1" />
+				<ref bean="addr2" />
+
+			</list>
+		</property>
+
+	</bean>
+	<bean id="car" class="com.prowings.springapp.Car">
+	  <property name="id" value="111"/>
+	  <property name="company" value="BMW"/>
+	  <property name="features">
+	  <list>
+	  <value>GPS</value>
+	  <value>backCamera</value>
+	  <value>Ac</value>
+	  </list>
+	  </property>
+	  <property name="components">
+	  <set>
+	  <value>A</value>
+	  <value>B</value>
+	  <value>C</value>
+	  </set>
+	  </property>
+	  
+	  <property name="parts">
+	  <map>
+	  <entry key="11" value="GearBox"/>
+	  <entry key="12" value="Wheels"/>
+	  <entry key="13" value="Headligth"/>
+	  </map>
+	  </property>
+	  <property name="Carprops">
+	  <props>
+	  <prop key="1">AQ</prop>
+	  <prop key="2">BS</prop>
+	  <prop key="3">CD</prop>
+	  </props>
+	  </property>
+	
+	</bean>
+
+
+</beans>    

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+      
+      <bean id="emp" name="employee"  class="com.prowings.Beanscope.Employee" scope="prototype" >
+      <property name="id" value="21"/>
+      <property name="name" value="Ram"/>
+      <property name="address" value="Nashik"/>
+      </bean>
+      
+      <bean id="std" name="student" class="com.prowings.Beanscope.Student">
+      <property name="id" value="1"/>
+      <property name="name" value="Krishna"/>
+      <!-- <property name="address" ref="addr"/> -->
+     <lookup-method name="getAddress" bean="addr"/>
+      
+      </bean>
+      <bean id="addr" name="address"  class="com.prowings.Beanscope.Address" scope="prototype">
+      <property name="pin" value="123"/>
+      <property name="city" value="pune"/>
+      <property name="country" value="india"/>
+      
+      </bean>
+   
+      
+      
+
+</beans>    

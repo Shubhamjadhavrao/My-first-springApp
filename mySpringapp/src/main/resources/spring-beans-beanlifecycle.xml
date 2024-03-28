@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+      <bean  id="a" class="com.prowings.beanlifecycle.Amazone" init-method="MyInitMethod" destroy-method="DestroyMethod">
+      <property name="id" value="1"/>
+      <property name="price" value="200"/>
+      <property name="product" value="OTG Cable"/>
+      </bean>
+      
+      <bean id="emp"  class="com.prowings.beanlifecycle.Employee">
+      <property name="id" value="21"/>
+      <property name="name" value="Shubham"/>
+      <property name="city" value="pune"/>
+      </bean>
+      
+
+</beans>    
